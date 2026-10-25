@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sun-clock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>sun-clock</h1>
+      <p>How much daylight is there, and when? Pick a place and a date.</p>
+    </header>
+
+    <div class="layout">
+      <section class="panel">
+        <div id="presets" class="presets"></div>
+        <div class="grid2">
+          <label>Latitude <input id="lat" type="number" step="0.01" min="-90" max="90"></label>
+          <label>Longitude <input id="lon" type="number" step="0.01" min="-180" max="180"></label>
+          <label>Date <input id="date" type="date"></label>
+          <label>UTC offset (h) <input id="off" type="number" step="0.5" min="-12" max="14"></label>
+        </div>
+        <button id="here">Use my location</button>
+        <dl id="stats" class="stats"></dl>
+      </section>
+
+      <section class="dial-wrap">
+        <svg id="dial" viewBox="-170 -170 340 340" role="img" aria-label="24 hour daylight dial"></svg>
+      </section>
+    </div>
+
+    <section class="year">
+      <h2>Day length through the year</h2>
+      <svg id="year" viewBox="0 0 720 150" preserveAspectRatio="none"></svg>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
